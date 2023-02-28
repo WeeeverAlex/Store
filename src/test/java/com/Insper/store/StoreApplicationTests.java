@@ -1,4 +1,4 @@
-package com.Insper.Store;
+package com.Insper.store;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
