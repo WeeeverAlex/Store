@@ -1,8 +1,7 @@
 package com.insper.store.product;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,6 +13,11 @@ public class ProductController {
 
     @GetMapping
     public List<Product> listProducts() {
-        return productService.listsProducts();
+        return productService.getProducts();
+    }
+
+    @PostMapping
+    public Product saveProduct(@RequestBody @Valid Product product) {
+        return productService.saveProduct(product);
     }
 }
