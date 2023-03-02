@@ -11,7 +11,7 @@ public class ProductService {
 
     private List<Product> products = new ArrayList<>();
 
-    public List<Product> listsProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 
@@ -21,4 +21,12 @@ public class ProductService {
         return product;
     }
 
+    public Product findProduct(String id) {
+        for (Product product : products) {
+            if (product.getId().equals(id)) {
+                return product;
+            }
+        }
+        return null;
+    }
 }
